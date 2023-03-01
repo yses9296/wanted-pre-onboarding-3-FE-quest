@@ -1,21 +1,30 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignInPage = () => {
+  const navigate = useNavigate();
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
 
-  const onSubmitLogin = (e: React.FormEvent) => {
+  const onSubmitSignIn = (e: React.FormEvent) => {
     e.preventDefault();
   };
 
   return (
     <div className="w-full h-screen flex justify-center items-center flex-col">
-      <h2 className="text-2xl font-bold mb-7">Login in to Wanted Course</h2>
+      <h1
+        onClick={() => {
+          navigate("/");
+        }}
+        className="text-xl font-extrabold cursor-pointer mb-10"
+      >
+        Wanted Pre-Onboarding Course
+      </h1>
       <form
-        onSubmit={onSubmitLogin}
+        onSubmit={onSubmitSignIn}
         className="w-96 flex flex-col items-center shadow-lg px-8 py-5 rounded-lg"
       >
+        <h2 className="text-2xl font-bold mb-7">Login in to Wanted Course</h2>
         <label className="w-full mb-1">아이디</label>
         <input
           type="text"
