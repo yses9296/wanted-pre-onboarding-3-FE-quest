@@ -4,10 +4,14 @@ import SideBar from "../components/SideBar";
 
 const Root = () => {
   return (
-    <div>
-      <Header />
-      <SideBar />
-      <Outlet />
+    <div className="w-full h-screen flex justify-center">
+      <div className="w-4/5 h-full ">
+        <Header />
+        <div className="flex flex-row h-93">
+          <SideBar />
+          <Outlet />
+        </div>
+      </div>
     </div>
   );
 };
