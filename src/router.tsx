@@ -5,6 +5,7 @@ import PageB from "pages/PageB";
 import PageC from "pages/PageC";
 import Root from "pages/Root";
 import SignInPage from "pages/SignInPage";
+import SignUpPage from "pages/SignUpPage";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
     ],
   },
   { path: "/signin", element: <SignInPage />, errorElement: <NotFoundPage /> },
+  { path: "/signup", element: <SignUpPage />, errorElement: <NotFoundPage /> },
 ]);
 
 export default router;

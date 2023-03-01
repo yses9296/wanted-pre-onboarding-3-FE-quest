@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const SignInPage = () => {
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
+  const [confimPassword, setConfirmPassword] = useState("");
 
   const onSubmitLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -11,7 +12,7 @@ const SignInPage = () => {
 
   return (
     <div className="w-full h-screen flex justify-center items-center flex-col">
-      <h2 className="text-2xl font-bold mb-7">Login in to Wanted Course</h2>
+      <h2 className="text-2xl font-bold mb-7">Join Wanted Course</h2>
       <form
         onSubmit={onSubmitLogin}
         className="w-96 flex flex-col items-center shadow-lg px-8 py-5 rounded-lg"
@@ -32,11 +33,20 @@ const SignInPage = () => {
           onChange={(e) => setPassword(e.target.value)}
           className="w-full mb-4 border-b px-2 py-1"
         />
-        <button className="w-40 py-2 rounded-md bg-indigo-100">로그인</button>
+        <label className="w-full mb-1">비밀번호 확인</label>
+        <input
+          type="password"
+          placeholder="********"
+          value={confimPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          className="w-full mb-4 border-b px-2 py-1"
+        />
+        <button className="w-40 py-2 rounded-md bg-indigo-100">회원가입</button>
+
         <div className="flex flex-row mt-4">
-          <p className="mr-4">회원이 아니신가요?</p>{" "}
-          <Link to="/signup" className="text-indigo-400 font-semibold">
-            회원가입
+          <p className="mr-4">이미 회원이신가요?</p>
+          <Link to="/signin" className="text-indigo-400 font-semibold">
+            로그인
           </Link>
         </div>
       </form>
