@@ -1,4 +1,4 @@
-import PageLayout from "./PageLayout";
+import PageLayout from "pages/PageLayout";
 
 const PageC = () => {
   return <PageLayout>This is Page C</PageLayout>;
