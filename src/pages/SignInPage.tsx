@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const SignInPage = () => {
-  const [email, setEmail] = useState("");
+  const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
 
   const onSubmitLogin = (e: React.FormEvent) => {
@@ -14,12 +14,12 @@ const SignInPage = () => {
         onSubmit={onSubmitLogin}
         className="w-96 flex flex-col items-center shadow-lg px-8 py-5 rounded-lg"
       >
-        <label className="w-full mb-1">이메일</label>
+        <label className="w-full mb-1">아이디</label>
         <input
-          type="email"
-          placeholder="example@gmail.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          type="text"
+          placeholder="wanted03"
+          value={userId}
+          onChange={(e) => setUserId(e.target.value)}
           className="w-full mb-4 border-b px-2 py-1"
         />
         <label className="w-full mb-1">비밀번호</label>
